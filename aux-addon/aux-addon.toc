@@ -1,12 +1,16 @@
 ## Interface: 11200
 ## Author: shirsig
 ## Title: aux
+## Notes-ruRU: Замена аукционого дома
 ## Notes: Auction House replacement
 ## SavedVariables: aux, aux_scale, aux_post_bid, aux_ignore_owner, aux_items, aux_item_ids, aux_auctionable_items, aux_merchant_buy, aux_merchant_sell
 
 libs\inspect.lua
 libs\module.lua
 libs\T.lua
+
+locale\localization.lua
+locale\localization.ruRU.lua
 
 aux-addon.lua
 util.lua
@@ -50,5 +54,3 @@ tabs\auctions\frame.lua
 
 tabs\bids\core.lua
 tabs\bids\frame.lua
-
-

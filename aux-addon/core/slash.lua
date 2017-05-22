@@ -11,7 +11,7 @@ end
 _G.aux_ignore_owner = true
 
 function status(enabled)
-	return (enabled and color.green'on' or color.red'off')
+	return (enabled and color.green..AUX_ON or color.red..AUX_OFF)
 end
 
 _G.SLASH_AUX1 = '/aux'
@@ -51,21 +51,21 @@ function SlashCmdList.AUX(command)
 	    _G.aux_items = {}
 	    _G.aux_item_ids = {}
 	    _G.aux_auctionable_items = {}
-        print('Item cache cleared.')
+        print(AUX_CACHE_CLEARED)
     elseif arguments[1] == 'populate' and arguments[2] == 'wdb' then
 	    cache.populate_wdb()
 	else
-		print('Usage:')
-		print('- scale [' .. color.blue(aux_scale) .. ']')
-		print('- ignore owner [' .. status(aux_ignore_owner) .. ']')
-		print('- post bid [' .. status(aux_post_bid) .. ']')
-		print('- tooltip value [' .. status(tooltip_settings.value) .. ']')
-		print('- tooltip daily [' .. status(tooltip_settings.daily) .. ']')
-		print('- tooltip merchant buy [' .. status(tooltip_settings.merchant_buy) .. ']')
-		print('- tooltip merchant sell [' .. status(tooltip_settings.merchant_sell) .. ']')
-		print('- tooltip disenchant value [' .. status(tooltip_settings.disenchant_value) .. ']')
-		print('- tooltip disenchant distribution [' .. status(tooltip_settings.disenchant_distribution) .. ']')
-		print('- clear item cache')
-		print('- populate wdb')
+		print(AUX_USAGE)
+		print('- scale [' .. color.blue(aux_scale) .. ']' .. AUX_CMD_1)
+		print('- ignore owner [' .. status(aux_ignore_owner) .. '|cffffff7f]|r' .. AUX_CMD_2)
+		print('- post bid [' .. status(aux_post_bid) .. '|cffffff7f]|r' .. AUX_CMD_3)
+		print('- tooltip value [' .. status(tooltip_settings.value) .. '|cffffff7f]|r' .. AUX_CMD_4)
+		print('- tooltip daily [' .. status(tooltip_settings.daily) .. '|cffffff7f]|r' .. AUX_CMD_5)
+		print('- tooltip merchant buy [' .. status(tooltip_settings.merchant_buy) .. '|cffffff7f]|r' .. AUX_CMD_6)
+		print('- tooltip merchant sell [' .. status(tooltip_settings.merchant_sell) .. '|cffffff7f]|r' .. AUX_CMD_7)
+		print('- tooltip disenchant value [' .. status(tooltip_settings.disenchant_value) .. '|cffffff7f]|r' .. AUX_CMD_8)
+		print('- tooltip disenchant distribution [' .. status(tooltip_settings.disenchant_distribution) .. '|cffffff7f]|r' .. AUX_CMD_9)
+		print('- clear item cache' .. AUX_CMD_10)
+		print('- populate wdb' .. AUX_CMD_11)
     end
 end

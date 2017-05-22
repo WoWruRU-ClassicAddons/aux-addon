@@ -56,7 +56,7 @@ do
 			for _, f in handlers do f() end
 		elseif event == 'PLAYER_LOGIN' then
 			for _, f in handlers2 do f() end
-			print('loaded - /aux')
+			print(AUX_LOADED)
 		else
 			_M[event]()
 		end
@@ -88,7 +88,7 @@ do
 	for scope in temp-S('character', 'faction', 'realm', 'account') do
 		local scope = scope
 		M[scope .. '_data'] = function(key, init)
-			if not cache[scope] then error('Cache not ready', 2) end
+			if not cache[scope] then error(AUX_CACHE_NOT_READY, 2) end
 			cache[scope][key] = cache[scope][key] or {}
 			for k, v in init or empty do
 				if cache[scope][key][k] == nil then
@@ -155,7 +155,7 @@ function M.hook(...)
 	end
 	handler = handler or getfenv(2)[name]
 	orig[object] = orig[object] or T
-	assert(not orig[object][name], '"' .. name .. '" is already hooked into.')
+	assert(not orig[object][name], '"' .. name .. AUX_ALREADY_HOOKED)
 	orig[object][name], object[name] = object[name], handler
 	return hook
 end
@@ -256,7 +256,7 @@ end
 
 do
 	local function cost_label(cost)
-		local label = LIGHTYELLOW_FONT_COLOR_CODE .. '(Total Cost: ' .. FONT_COLOR_CODE_CLOSE
+		local label = LIGHTYELLOW_FONT_COLOR_CODE .. AUX_TOTAL_COST .. FONT_COLOR_CODE_CLOSE
 		label = label .. (cost and money.to_string2(cost, nil, LIGHTYELLOW_FONT_COLOR_CODE) or GRAY_FONT_COLOR_CODE .. '---' .. FONT_COLOR_CODE_CLOSE)
 		label = label .. LIGHTYELLOW_FONT_COLOR_CODE .. ')' .. FONT_COLOR_CODE_CLOSE
 		return label
