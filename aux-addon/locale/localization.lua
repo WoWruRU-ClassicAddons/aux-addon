@@ -2,9 +2,9 @@
 AUX_CLOSE = "Close"
 -- aux-addon.lua
 AUX_LOADED = 'loaded - /aux'
-AUX_CACHE_NOT_READY = 'Cache not ready'
+AUX_CACHE_FOR = 'Cache for '
+AUX_DATA_NOT_READY = ' data not ready'
 AUX_ALREADY_HOOKED = '" is already hooked into.'
-AUX_TOTAL_COST = '(Total Cost: '
 
 ----------------------------
 ---------   util   ---------
@@ -21,10 +21,6 @@ AUX_INVALID_SCHEMA = 'Invalid schema.'
 -- util/info.lua
 AUX_CURRENTLY_EQUIPPED = 'Currently Equipped'
 -- util/filter.lua
-AUX_SHORT = '30m'
-AUX_MEDIUM = '2h'
-AUX_LONG = '8h'
-AUX_VERY_LONG = '24h'
 AUX_INVALID_ITEM_NAME = 'Invalid item name'
 AUX_INVALID_CHOICE = 'Invalid choice for '
 AUX_INVALID_INPUT = 'Invalid input for '
@@ -129,6 +125,10 @@ AUX_AUCTIONS = 'Auctions'
 ----------------------------
 
 -- gui/auction_listing.lua
+AUX_SHORT = '30m'
+AUX_MEDIUM = '2h'
+AUX_LONG = '8h'
+AUX_VERY_LONG = '24h'
 AUX_ITEM = 'Item'
 AUX_LVL = 'Lvl'
 AUX_SELLER = 'Seller'
@@ -169,6 +169,8 @@ AUX_CMD_8 = ''
 AUX_CMD_9 = ''
 AUX_CMD_10 = ''
 AUX_CMD_11 = ''
+-- crafting.lua
+AUX_TOTAL_COST = '(Total Cost: '
 -- core/cache.lua
 AUX_CACHE_POPULATED = 'Cache populated.'
 AUX_FETCHING_ITEM = 'Fetching item '

@@ -45,6 +45,7 @@ do
     local btn = gui.button(frame)
     btn:SetPoint('TOPLEFT', cancel_button, 'TOPRIGHT', 5, 0)
     btn:SetText(AUX_REFRESH)
+	btn:SetWidth(100)
     btn:SetScript('OnClick', function()
         scan_auctions()
     end)

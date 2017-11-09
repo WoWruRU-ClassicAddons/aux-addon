@@ -5,9 +5,9 @@ if (GetLocale() == 'ruRU') then
 	AUX_CLOSE = "Закрыть"
 	-- aux-addon.lua
 	AUX_LOADED = 'загружен. Введите /aux для помощи'
-	AUX_CACHE_NOT_READY = 'Кэш не готов'
+	AUX_CACHE_FOR = 'Кэш для '
+	AUX_DATA_NOT_READY = ' не готов'
 	AUX_ALREADY_HOOKED = '" уже подключен.'
-	AUX_TOTAL_COST = '(Общая стоимость: '
 	
 	----------------------------
 	---------   util   ---------
@@ -24,10 +24,6 @@ if (GetLocale() == 'ruRU') then
 	-- util/info.lua
 	AUX_CURRENTLY_EQUIPPED = 'На персонаже:'
 	-- util/filter.lua
-	AUX_SHORT = '30м'
-	AUX_MEDIUM = '2ч'
-	AUX_LONG = '8ч'
-	AUX_VERY_LONG = '24ч'
 	AUX_INVALID_ITEM_NAME = 'Неверное имя предмета'
 	AUX_INVALID_CHOICE = 'Неверный выбор для '
 	AUX_INVALID_INPUT = 'Неверный ввод для '
@@ -132,6 +128,10 @@ if (GetLocale() == 'ruRU') then
 	----------------------------
 	
 	-- gui/auction_listing.lua
+	AUX_SHORT = '30м'
+	AUX_MEDIUM = '2ч'
+	AUX_LONG = '8ч'
+	AUX_VERY_LONG = '24ч'
 	AUX_ITEM = 'Предмет'
 	AUX_LVL = 'Ур.'
 	AUX_SELLER = 'Продавец'
@@ -172,6 +172,8 @@ if (GetLocale() == 'ruRU') then
 	AUX_CMD_9 = ': Источник распыления в подсказке'
 	AUX_CMD_10 = '|cffffffff: Очистка кэша предметов|r'
 	AUX_CMD_11 = '|cffffffff: Наполнение wdb|r'
+	-- crafting.lua
+	AUX_TOTAL_COST = '(Общая стоимость: '
 	-- core/cache.lua	
 	AUX_CACHE_POPULATED = 'Кэш наполнен.'
 	AUX_FETCHING_ITEM = 'Получение предмета '
