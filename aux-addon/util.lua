@@ -4,11 +4,15 @@ local T = require 'T'
 
 M.immutable = setmetatable(T.acquire(), {
 	__metatable = false,
-	__newindex = nop,
+	__newindex = pass,
 	__sub = function(_, t)
-		return setmetatable(T.acquire(), T.map('__metatable', false, '__newindex', nop, '__index', t))
+		return setmetatable(T.acquire(), T.map('__metatable', false, '__newindex', pass, '__index', t))
 	end
 })
+
+function M.enum(n)
+	if n > 0 then return immutable-{}, enum(n - 1) end
+end
 
 M.select = T.vararg-function(arg)
 	for _ = 1, arg[1] do
@@ -23,15 +27,6 @@ end
 
 M.join = table.concat
 
-function M.range(arg1, arg2)
-	local i, n = arg2 and arg1 or 1, arg2 or arg1
-	if i <= n then return first, range(i + 1, n) end
-end
-
-function M.replicate(count, value)
-	if count > 0 then return value, replicate(count - 1, value) end
-end
-
 M.index = T.vararg-function(arg)
 	local t = tremove(arg, 1)
 	for _, v in ipairs(arg) do
@@ -40,7 +35,7 @@ M.index = T.vararg-function(arg)
 	return t
 end
 
-M.huge = 1.8 * 10 ^ 308
+M.huge = 1/0
 
 function M.modified()
 	return IsShiftKeyDown() or IsControlKeyDown() or IsAltKeyDown()

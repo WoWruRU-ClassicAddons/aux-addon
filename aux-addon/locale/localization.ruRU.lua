@@ -1,6 +1,6 @@
 -- Russian localization by Lichery
 	
-if (GetLocale() == 'ruRU') then
+if GetLocale() == 'ruRU' then
 	-- frame.lua
 	AUX_CLOSE = "Закрыть"
 	-- aux-addon.lua
