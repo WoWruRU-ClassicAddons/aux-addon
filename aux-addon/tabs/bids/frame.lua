@@ -65,7 +65,7 @@ do
     local btn = gui.button(frame)
     btn:SetPoint('TOPLEFT', buyout_button, 'TOPRIGHT', 5, 0)
     btn:SetText(AUX_REFRESH)
-	btn:SetWidth(100)
+		btn:SetWidth(btn:GetFontString():GetStringWidth() + 14)
     btn:SetScript('OnClick', function()
         scan_bids()
     end)

@@ -112,7 +112,7 @@ M.search_columns = {
     },
     {
         title = AUX_STACK_SIZE,
-        width = .055,
+        width = .06,
         align = 'CENTER',
         fill = function(cell, record)
             cell.text:SetText(record.aux_quantity)
@@ -219,7 +219,7 @@ M.search_columns = {
     },
     {
         title = AUX_HIST_VALUE,
-        width = .08,
+        width = .075,
         align = 'CENTER',
         fill = function(cell, record)
             local pct, bidPct = record_percentage(record)

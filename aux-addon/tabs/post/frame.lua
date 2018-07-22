@@ -132,7 +132,8 @@ end
 do
     local btn = gui.button(frame.parameters)
     btn:SetPoint('TOPLEFT', status_bar, 'TOPRIGHT', 5, 0)
-    btn:SetText(AUX_POST)
+    btn:SetText(AUX_POST_BTN)
+		btn:SetWidth(btn:GetFontString():GetStringWidth() + 14)
     btn:SetScript('OnClick', post_auctions)
     post_button = btn
 end
@@ -140,7 +141,7 @@ do
     local btn = gui.button(frame.parameters)
     btn:SetPoint('TOPLEFT', post_button, 'TOPRIGHT', 5, 0)
     btn:SetText(AUX_REFRESH)
-	btn:SetWidth(100)
+		btn:SetWidth(btn:GetFontString():GetStringWidth() + 14)
     btn:SetScript('OnClick', refresh_button_click)
     refresh_button = btn
 end

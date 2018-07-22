@@ -294,19 +294,20 @@ function M.tooltip(setter, arg1, arg2)
     return tooltip, AuxTooltip.money
 end
 
-function item_charges(tooltip)
-	for _, line in tooltip do
-        local pattern = '^' .. gsub(gsub(ITEM_SPELL_CHARGES_P1, '%%d', '(%%d+)'), '%%%d+%$d', '(%%d+)') .. '$'
+do
+	local pattern = '^' .. gsub(gsub(ITEM_SPELL_CHARGES_P1, '%%d', '(%%d+)'), '%%%d+%$d', '(%%d+)') .. '$'
+	function item_charges(tooltip)
+		for _, line in tooltip do
+			local _, _, left_charges_string = strfind(line.left_text or '', pattern)
+			local _, _, right_charges_string = strfind(line.right_text or '', pattern)
 
-        local _, _, left_charges_string = strfind(line.left_text or '', pattern)
-        local _, _, right_charges_string = strfind(line.right_text or '', pattern)
-
-        local charges = tonumber(left_charges_string) or tonumber(right_charges_string)
-		if charges then
-			return max(1, charges) -- TODO kronos bug? should never be 0
+			local charges = tonumber(left_charges_string) or tonumber(right_charges_string)
+			if charges then
+				return max(1, charges) -- TODO kronos bug? should never be 0
+			end
 		end
-    end
-    return 1
+		return 1
+	end
 end
 
 do
@@ -340,9 +341,10 @@ do
 	end
 end
 
-function M.durability(tooltip)
+do
+	local pattern = '^' .. gsub(gsub(DURABILITY_TEMPLATE, '%%d', '(%%d+)'), '%%%d+%$d', '(%%d+)') .. '$'
+	function M.durability(tooltip)
     for _, line in tooltip do
-        local pattern = '^' .. gsub(gsub(DURABILITY_TEMPLATE, '%%d', '(%%d+)'), '%%%d+%$d', '(%%d+)') .. '$'
         local _, _, left_durability_string, left_max_durability_string = strfind(line.left_text or '', pattern)
         local _, _, right_durability_string, right_max_durability_string = strfind(line.right_text or '', pattern)
         local durability = tonumber(left_durability_string) or tonumber(right_durability_string)
@@ -351,6 +353,7 @@ function M.durability(tooltip)
             return durability, max_durability
         end
     end
+	end
 end
 
 function M.item_key(link)

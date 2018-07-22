@@ -55,9 +55,9 @@ do
 end
 do
 	local btn = gui.button(frame, gui.font_size.small)
-	btn:SetHeight(25)
-	btn:SetWidth(70) -- 60
 	btn:SetText(aux.color.label.enabled..AUX_RANGE_1)
+	btn:SetHeight(25)
+	btn:SetWidth(btn:GetFontString():GetStringWidth() + 14) -- 60
 	btn:SetScript('OnClick', function()
 		update_real_time(true)
 	end)
@@ -147,11 +147,11 @@ do
 end
 do
     local btn = gui.button(frame)
-    btn:SetHeight(25)
-	btn:SetWidth(120)
     btn:SetPoint('RIGHT', start_button, 'LEFT', -4, 0)
     btn:SetBackdropColor(aux.color.state.enabled())
     btn:SetText(AUX_RESUME)
+    btn:SetHeight(25)
+		btn:SetWidth(btn:GetFontString():GetStringWidth() + 14)
     btn:SetScript('OnClick', function()
         execute(true)
     end)
@@ -235,7 +235,7 @@ do
     local btn = gui.button(frame.results)
     btn:SetPoint('TOPLEFT', buyout_button, 'TOPRIGHT', 5, 0)
     btn:SetText(AUX_CLEAR)
-	btn:SetWidth(100)
+		btn:SetWidth(btn:GetFontString():GetStringWidth() + 14)
     btn:SetScript('OnClick', function()
         while tremove(current_search().records) do end
         current_search().table:SetDatabase()
@@ -245,7 +245,7 @@ do
     local btn = gui.button(frame.saved)
     btn:SetPoint('TOPLEFT', status_bar_frame, 'TOPRIGHT', 5, 0)
     btn:SetText(AUX_FAVORITE)
-	btn:SetWidth(100)
+		btn:SetWidth(btn:GetFontString():GetStringWidth() + 14)
     btn:SetScript('OnClick', function()
         add_favorite(search_box:GetText())
     end)
