@@ -8,7 +8,10 @@ local history = require 'aux.core.history'
 local search_tab = require 'aux.tabs.search'
 
 function aux.handle.LOAD()
-    aux.event_listener('ADDON_LOADED', function()
+		if not aux_crafting_cost then
+			return
+		end
+		aux.event_listener('ADDON_LOADED', function()
         if arg1 == 'Blizzard_CraftUI' then
             craft_ui_loaded()
         elseif arg1 == 'Blizzard_TradeSkillUI' then
