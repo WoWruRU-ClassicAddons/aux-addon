@@ -275,9 +275,9 @@ function M.parse_filter_string(str)
                     if parts[i] == 'item' then
                         return nil, AUX_INVALID_ITEM_NAME, aux_auctionable_items
                     elseif type(input_type) == 'table' then
-                        return nil,  AUX_INVALID_CHOICE .. parts[i], input_type
+                        return nil,  AUX_INVALID_CHOICE .. ' ' .. parts[i], input_type
                     else
-                        return nil, AUX_INVALID_INPUT .. parts[i] .. AUX_EXPECTING .. input_type
+                        return nil, AUX_INVALID_INPUT .. ' ' .. parts[i] .. '. ' .. AUX_EXPECTING .. ': ' .. input_type
                     end
                 end
                 tinsert(post_filter, T.list('filter', parts[i], parts[i + 1]))

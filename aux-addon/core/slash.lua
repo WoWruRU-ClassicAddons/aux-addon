@@ -54,22 +54,22 @@ function SlashCmdList.AUX(command)
 	    _G.aux_items = {}
 	    _G.aux_item_ids = {}
 	    _G.aux_auctionable_items = {}
-        aux.print(AUX_CACHE_CLEARED)
+        aux.print(AUX_CACHE_CLEARED .. '.')
     elseif arguments[1] == 'populate' and arguments[2] == 'wdb' then
 	    info.populate_wdb()
 	else
-		aux.print(AUX_USAGE)
-		aux.print('- scale [' .. color.blue(aux_scale) .. ']' .. AUX_CMD_1)
-		aux.print('- ignore owner [' .. status(aux_ignore_owner) .. '|cffffff7f]|r' .. AUX_CMD_2)
-		aux.print('- post bid [' .. status(aux_post_bid) .. '|cffffff7f]|r' .. AUX_CMD_3)
-		aux.print('- crafting cost [' .. status(aux_crafting_cost) .. ']')
-		aux.print('- tooltip value [' .. status(tooltip_settings.value) .. '|cffffff7f]|r' .. AUX_CMD_4)
-		aux.print('- tooltip daily [' .. status(tooltip_settings.daily) .. '|cffffff7f]|r' .. AUX_CMD_5)
-		aux.print('- tooltip merchant buy [' .. status(tooltip_settings.merchant_buy) .. '|cffffff7f]|r' .. AUX_CMD_6)
-		aux.print('- tooltip merchant sell [' .. status(tooltip_settings.merchant_sell) .. '|cffffff7f]|r' .. AUX_CMD_7)
-		aux.print('- tooltip disenchant value [' .. status(tooltip_settings.disenchant_value) .. '|cffffff7f]|r' .. AUX_CMD_8)
-		aux.print('- tooltip disenchant distribution [' .. status(tooltip_settings.disenchant_distribution) .. '|cffffff7f]|r' .. AUX_CMD_9)
-		aux.print('- clear item cache' .. AUX_CMD_10)
-		aux.print('- populate wdb' .. AUX_CMD_11)
+		aux.print(AUX_USAGE .. ': ')
+		aux.print('- scale [' .. aux.color.blue(aux_scale) .. '|cffffff7f]|r: ' .. AUX_CMD_1)
+		aux.print('- ignore owner [' .. status(aux_ignore_owner) .. '|cffffff7f]|r: ' .. AUX_CMD_2)
+		aux.print('- post bid [' .. status(aux_post_bid) .. '|cffffff7f]|r: ' .. AUX_CMD_3)
+		aux.print('- crafting cost [' .. status(aux_crafting_cost) .. '|cffffff7f]|r: ' .. AUX_CMD_4)
+		aux.print('- tooltip value [' .. status(tooltip_settings.value) .. '|cffffff7f]|r: ' .. AUX_CMD_5)
+		aux.print('- tooltip daily [' .. status(tooltip_settings.daily) .. '|cffffff7f]|r: ' .. AUX_CMD_6)
+		aux.print('- tooltip merchant buy [' .. status(tooltip_settings.merchant_buy) .. '|cffffff7f]|r: ' .. AUX_CMD_7)
+		aux.print('- tooltip merchant sell [' .. status(tooltip_settings.merchant_sell) .. '|cffffff7f]|r: ' .. AUX_CMD_8)
+		aux.print('- tooltip disenchant value [' .. status(tooltip_settings.disenchant_value) .. '|cffffff7f]|r: ' .. AUX_CMD_9)
+		aux.print('- tooltip disenchant distribution [' .. status(tooltip_settings.disenchant_distribution) .. '|cffffff7f]|r: ' .. AUX_CMD_10)
+		aux.print('- clear item cache' .. '|r: ' .. AUX_CMD_11)
+		aux.print('- populate wdb' .. '|r: ' .. AUX_CMD_12)
     end
 end

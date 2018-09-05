@@ -55,7 +55,7 @@ do
 end
 do
 	local btn = gui.button(frame, gui.font_size.small)
-	btn:SetText(aux.color.label.enabled..AUX_RANGE_1)
+	btn:SetText(aux.color.label.enabled..AUX_RANGE_1 .. ':')
 	btn:SetHeight(25)
 	btn:SetWidth(btn:GetFontString():GetStringWidth() + 14) -- 60
 	btn:SetScript('OnClick', function()

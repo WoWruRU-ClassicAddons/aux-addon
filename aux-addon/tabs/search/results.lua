@@ -303,7 +303,7 @@ function M.execute(resume, real_time)
 
 	local queries, error = filter_util.queries(filter_string)
 	if not queries then
-		aux.print(AUX_INVALID_FILTER, error)
+		aux.print(AUX_INVALID_FILTER .. ':', error)
 		return
 	elseif real_time then
 		if getn(queries) > 1 then

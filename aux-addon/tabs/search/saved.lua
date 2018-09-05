@@ -92,7 +92,7 @@ function get_auto_buy_validator()
 			if queries then
 				tinsert(validators, queries[1].validator)
 			else
-				aux.print(AUX_INVALID_AUTO_BUY_FILTER, error)
+				aux.print(AUX_INVALID_AUTO_BUY_FILTER .. ':', error)
 			end
 		end
 	end
@@ -110,7 +110,7 @@ function add_favorite(filter_string)
 		))
 		update_search_listings()
 	else
-		aux.print(AUX_INVALID_FILTER, error)
+		aux.print(AUX_INVALID_FILTER .. ':', error)
 	end
 end
 
@@ -125,7 +125,7 @@ function enable_auto_buy(search)
 			search.auto_buy = true
 		end
 	else
-		aux.print(AUX_INVALID_FILTER, error)
+		aux.print(AUX_INVALID_FILTER .. ':', error)
 	end
 end
 

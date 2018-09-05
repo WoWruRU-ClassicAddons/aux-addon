@@ -2,9 +2,9 @@
 AUX_CLOSE = "Close"
 -- aux-addon.lua
 AUX_LOADED = 'loaded - /aux'
-AUX_CACHE_FOR = 'Cache for '
-AUX_DATA_NOT_READY = ' data not ready'
-AUX_ALREADY_HOOKED = '" is already hooked into.'
+AUX_CACHE_FOR = 'Cache for'
+AUX_DATA_NOT_READY = 'data not ready'
+AUX_ALREADY_HOOKED = 'is already hooked into'
 
 ----------------------------
 ---------   util   ---------
@@ -15,16 +15,16 @@ AUX_SEARCHING_AUCTIONS = 'Searching auction...'
 AUX_AUCTION_FOUND = 'Auction found'
 AUX_AUCTION_NOT_FOUND = 'Auction not found'
 -- util/persistence.lua
-AUX_INVALID_SCHEMA = 'Invalid schema.'
+AUX_INVALID_SCHEMA = 'Invalid schema'
 -- util/money.lua
 
 -- util/info.lua
 AUX_CURRENTLY_EQUIPPED = 'Currently Equipped'
 -- util/filter.lua
 AUX_INVALID_ITEM_NAME = 'Invalid item name'
-AUX_INVALID_CHOICE = 'Invalid choice for '
-AUX_INVALID_INPUT = 'Invalid input for '
-AUX_EXPECTING = '. Expecting: '
+AUX_INVALID_CHOICE = 'Invalid choice for'
+AUX_INVALID_INPUT = 'Invalid input for'
+AUX_EXPECTING = 'Expecting'
 AUX_EMPTY_MODIFIER = 'Empty modifier'
 AUX_MALFORMED_EXPRESSION = 'Malformed expression'
 
@@ -39,8 +39,8 @@ AUX_AUTO_BUY_1 = ' Auto Buy'
 AUX_MOVE_UP = 'Move Up'
 AUX_MOVE_DOWN = 'Move Down'
 AUX_DELETE = 'Delete'
-AUX_INVALID_AUTO_BUY_FILTER = 'Invalid auto buy filter:'
-AUX_INVALID_FILTER = 'Invalid filter:'
+AUX_INVALID_AUTO_BUY_FILTER = 'Invalid auto buy filter'
+AUX_INVALID_FILTER = 'Invalid filter'
 AUX_ERROR_AUTO_BUY_1 = 'Error: Auto Buy does not support multi-queries'
 AUX_ERROR_AUTO_BUY_2 = 'Error: Auto Buy does not support Blizzard filters'
 -- tabs/search/results.lua
@@ -53,7 +53,7 @@ AUX_SCAN_COMPLETE = 'Scan complete'
 AUX_ERROR_REAL_TIME_1 = 'Error: The real time mode does not support multi-queries'
 AUX_ERROR_REAL_TIME_2 = 'Error: The real time mode does not support page ranges'
 -- tabs/search/frame.lua
-AUX_RANGE_1 = 'Range:'
+AUX_RANGE_1 = 'Range'
 AUX_REAL_TIME = 'Real Time'
 AUX_SEARCH = 'Search'
 AUX_PAUSE = 'Pause'
@@ -80,7 +80,7 @@ AUX_AUTO_BUY = 'Auto Buy'
 AUX_FAVORITE_SEARCHES = 'Favorite Searches'
 AUX_RECENT_SEARCHES = 'Recent Searches'
 -- tabs/search/filter.lua
-AUX_POST_FILTER = 'Post Filter:'
+AUX_POST_FILTER = 'Post Filter'
 -- tabs/search/core.lua
 AUX_TABLE_FULL = 'Table full!\nFurther results from this search will still be processed but no longer displayed in the table.'
 
@@ -147,19 +147,19 @@ AUX_MSG_2 = 'Double-click to expand this item and show all the auctions.'
 ----------------------------
 
 -- core/tooltip.lua
-AUX_DISENCHANT_INFO = 'Disenchants into:'
-AUX_DISENCHANT = 'Disenchant: '
-AUX_VENDOR_BUY = 'Vendor Buy: '
-AUX_LIMITED = '(limited): '
-AUX_VENDOR = 'Vendor: '
-AUX_VALUE = 'Value: '
-AUX_TODAY = 'Today: '
+AUX_DISENCHANT_INFO = 'Disenchants into'
+AUX_DISENCHANT = 'Disenchant'
+AUX_VENDOR_BUY = 'Vendor Buy'
+AUX_LIMITED = 'limited'
+AUX_VENDOR = 'Vendor'
+AUX_VALUE = 'Value'
+AUX_TODAY = 'Today'
 -- core/slash.lua
 AUX_ON = 'on'
 AUX_OFF = 'off'
-AUX_CACHE_CLEARED = 'Item cache cleared.'
-AUX_USAGE = 'Usage: '
-AUX_CMD_1 = '' -- CMD_1 - CMD_10 - discriptions chat commands
+AUX_CACHE_CLEARED = 'Item cache cleared'
+AUX_USAGE = 'Usage'
+AUX_CMD_1 = '' -- CMD_1 - CMD_12 - descriptions chat commands
 AUX_CMD_2 = ''
 AUX_CMD_3 = ''
 AUX_CMD_4 = ''
@@ -170,8 +170,9 @@ AUX_CMD_8 = ''
 AUX_CMD_9 = ''
 AUX_CMD_10 = ''
 AUX_CMD_11 = ''
+AUX_CMD_12 = ''
 -- crafting.lua
-AUX_TOTAL_COST = '(Total Cost: '
+AUX_TOTAL_COST = 'Total Cost'
 -- core/cache.lua
-AUX_CACHE_POPULATED = 'Cache populated.'
-AUX_FETCHING_ITEM = 'Fetching item '
+AUX_CACHE_POPULATED = 'Cache populated'
+AUX_FETCHING_ITEM = 'Fetching item'

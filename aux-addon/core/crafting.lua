@@ -22,7 +22,7 @@ end
 
 do
     local function cost_label(cost)
-        local label = LIGHTYELLOW_FONT_COLOR_CODE .. AUX_TOTAL_COST .. FONT_COLOR_CODE_CLOSE
+        local label = LIGHTYELLOW_FONT_COLOR_CODE .. '(' .. AUX_TOTAL_COST .. ': ' .. FONT_COLOR_CODE_CLOSE
         label = label .. (cost and money.to_string2(cost, nil, LIGHTYELLOW_FONT_COLOR_CODE) or GRAY_FONT_COLOR_CODE .. '?' .. FONT_COLOR_CODE_CLOSE)
         label = label .. LIGHTYELLOW_FONT_COLOR_CODE .. ')' .. FONT_COLOR_CODE_CLOSE
         return label

@@ -78,7 +78,7 @@ do
 	for scope in T.temp-T.set('character', 'faction', 'realm', 'account') do
 		local scope = scope
 		M[scope .. '_data'] = function(key, init)
-			if not cache[scope] then error(AUX_CACHE_FOR .. scope .. AUX_DATA_NOT_READY, 2) end
+			if not cache[scope] then error(AUX_CACHE_FOR .. ' ' .. scope .. ' ' .. AUX_DATA_NOT_READY, 2) end
 			cache[scope][key] = cache[scope][key] or {}
 			for k, v in init or T.empty do
 				if cache[scope][key][k] == nil then
@@ -124,7 +124,7 @@ M.hook = T.vararg-function(arg)
 	end
 	handler = handler or getfenv(3)[name]
 	orig[object] = orig[object] or T.acquire()
-	assert(not orig[object][name], '"' .. name .. AUX_ALREADY_HOOKED)
+	assert(not orig[object][name], '"' .. name .. '" ' .. AUX_ALREADY_HOOKED .. '.')
 	orig[object][name], object[name] = object[name], handler
 	return hook
 end
