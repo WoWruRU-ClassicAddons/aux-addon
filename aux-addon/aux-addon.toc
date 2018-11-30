@@ -8,10 +8,11 @@
 libs\package.lua
 libs\T.lua
 
-locale\localization.lua
-locale\localization.ruRU.lua
-
 aux-addon.lua
+
+locale\enUS.lua
+locale\ruRU.lua
+
 util.lua
 control.lua
 color.lua

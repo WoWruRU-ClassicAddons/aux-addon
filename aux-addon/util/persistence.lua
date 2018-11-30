@@ -2,6 +2,7 @@ module 'aux.util.persistence'
 
 local T = require 'T'
 local aux = require 'aux'
+local L = aux.L
 
 function M.read(schema, str)
     if schema == 'string' then
@@ -15,7 +16,7 @@ function M.read(schema, str)
     elseif type(schema) == 'table' and schema[1] == 'tuple' then
         return T.temp-read_tuple(schema, str)
     else
-        error(AUX_INVALID_SCHEMA .. '.', 2)
+        error(L['Invalid schema'] .. '.', 2)
     end
 end
 
@@ -31,7 +32,7 @@ function M.write(schema, obj)
     elseif type(schema) == 'table' and schema[1] == 'tuple' then
         return write_tuple(schema, obj)
     else
-        error(AUX_INVALID_SCHEMA .. '.', 2)
+        error(L['Invalid schema'] .. '.', 2)
     end
 end
 

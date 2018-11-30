@@ -6,6 +6,7 @@ local info = require 'aux.util.info'
 local money = require 'aux.util.money'
 local history = require 'aux.core.history'
 local search_tab = require 'aux.tabs.search'
+local L = aux.L
 
 function aux.handle.LOAD()
 		if not aux_crafting_cost then
@@ -22,7 +23,7 @@ end
 
 do
     local function cost_label(cost)
-        local label = LIGHTYELLOW_FONT_COLOR_CODE .. '(' .. AUX_TOTAL_COST .. ': ' .. FONT_COLOR_CODE_CLOSE
+        local label = LIGHTYELLOW_FONT_COLOR_CODE .. '(' .. L['Total Cost'] .. ': ' .. FONT_COLOR_CODE_CLOSE
         label = label .. (cost and money.to_string2(cost, nil, LIGHTYELLOW_FONT_COLOR_CODE) or GRAY_FONT_COLOR_CODE .. '?' .. FONT_COLOR_CODE_CLOSE)
         label = label .. LIGHTYELLOW_FONT_COLOR_CODE .. ')' .. FONT_COLOR_CODE_CLOSE
         return label

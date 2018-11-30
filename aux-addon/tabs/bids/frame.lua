@@ -5,6 +5,7 @@ local info = require 'aux.util.info'
 local gui = require 'aux.gui'
 local auction_listing = require 'aux.gui.auction_listing'
 local search_tab = require 'aux.tabs.search'
+local L = aux.L
 
 frame = CreateFrame('Frame', nil, aux.frame)
 frame:SetAllPoints()
@@ -50,21 +51,21 @@ end
 do
     local btn = gui.button(frame)
     btn:SetPoint('TOPLEFT', status_bar, 'TOPRIGHT', 5, 0)
-    btn:SetText(AUX_BID)
+    btn:SetText(L['Bid'])
     btn:Disable()
     bid_button = btn
 end
 do
     local btn = gui.button(frame)
     btn:SetPoint('TOPLEFT', bid_button, 'TOPRIGHT', 5, 0)
-    btn:SetText(AUX_BUYOUT)
+    btn:SetText(L['Buyout'])
     btn:Disable()
     buyout_button = btn
 end
 do
     local btn = gui.button(frame)
     btn:SetPoint('TOPLEFT', buyout_button, 'TOPRIGHT', 5, 0)
-    btn:SetText(AUX_REFRESH)
+    btn:SetText(L['Refresh'])
 		btn:SetWidth(btn:GetFontString():GetStringWidth() + 14)
     btn:SetScript('OnClick', function()
         scan_bids()

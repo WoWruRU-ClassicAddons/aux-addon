@@ -36,7 +36,7 @@ do
 	local btn = gui.button(frame)
 	btn:SetPoint('BOTTOMRIGHT', -5, 5)
 	gui.set_size(btn, 80, 24) -- btn, 60, 24
-	btn:SetText(AUX_CLOSE)
+	btn:SetText(L["Close"])
 	btn:SetScript('OnClick', function() frame:Hide() end)
 	close_button = btn
 end

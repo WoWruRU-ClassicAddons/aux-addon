@@ -7,6 +7,7 @@ local money = require 'aux.util.money'
 local filter_util = require 'aux.util.filter'
 local history = require 'aux.core.history'
 local disenchant = require 'aux.core.disenchant'
+local L = aux.L
 
 function default_filter(str)
     return {
@@ -273,11 +274,11 @@ function M.parse_filter_string(str)
             if input_type ~= '' then
                 if not parts[i + 1] or not parse_parameter(input_type, parts[i + 1]) then
                     if parts[i] == 'item' then
-                        return nil, AUX_INVALID_ITEM_NAME, aux_auctionable_items
+                        return nil, L['Invalid item name'], aux_auctionable_items
                     elseif type(input_type) == 'table' then
-                        return nil,  AUX_INVALID_CHOICE .. ' ' .. parts[i], input_type
+                        return nil,  L['Invalid choice for'] .. ' ' .. parts[i], input_type
                     else
-                        return nil, AUX_INVALID_INPUT .. ' ' .. parts[i] .. '. ' .. AUX_EXPECTING .. ': ' .. input_type
+                        return nil, L['Invalid input for'] .. ' ' .. parts[i] .. '. ' .. L['Expecting'] .. ': ' .. input_type
                     end
                 end
                 tinsert(post_filter, T.list('filter', parts[i], parts[i + 1]))
@@ -294,7 +295,7 @@ function M.parse_filter_string(str)
 		        tinsert(post_filter, T.list('filter', 'tooltip', parts[i]))
 		        tinsert(filter, post_filter[getn(post_filter)])
 	        else
-	            return nil, AUX_EMPTY_MODIFIER
+	            return nil, L['Empty modifier']
 	        end
         end
         i = i + 1
@@ -328,7 +329,7 @@ function M.query(filter_string)
         tinsert(suggestions, 'and')
         tinsert(suggestions, 'or')
         tinsert(suggestions, 'not')
-        return nil, suggestions, AUX_MALFORMED_EXPRESSION
+        return nil, suggestions, L['Malformed expression']
     end
 
     return {

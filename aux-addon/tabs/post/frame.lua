@@ -7,6 +7,7 @@ local gui = require 'aux.gui'
 local listing = require 'aux.gui.listing'
 local item_listing = require 'aux.gui.item_listing'
 local search_tab = require 'aux.tabs.search'
+local L = aux.L
 
 frame = CreateFrame('Frame', nil, aux.frame)
 frame:SetAllPoints()
@@ -46,7 +47,7 @@ do
     end)
     local label = gui.label(checkbox, gui.font_size.small)
     label:SetPoint('LEFT', checkbox, 'RIGHT', 4, 1)
-    label:SetText(AUX_HIDDEN_ITEMS)
+    label:SetText(L['Show hidden items'])
     show_hidden_checkbox = checkbox
 end
 
@@ -75,11 +76,11 @@ end
 
 bid_listing = listing.new(frame.bid_listing)
 bid_listing:SetColInfo{
-    {name=AUX_AUCTIONS_1, width=.16, align='CENTER'}, -- width=.17
-    {name=AUX_TIME_LEFT, width=.10, align='CENTER'}, -- width=.11
-    {name=AUX_STACK_SIZE, width=.16, align='CENTER'}, -- width=.11
-    {name=AUX_AUCTION_BID_ITEM, width=.4, align='RIGHT'},
-    {name=AUX_HIST_VALUE, width=.18, align='CENTER'}, -- -- width=.21
+    {name=L['AUX_AUCTIONS'], width=.16, align='CENTER'}, -- width=.17
+    {name=L['Time\nLeft'], width=.10, align='CENTER'}, -- width=.11
+    {name=L['Stack\nSize'], width=.16, align='CENTER'}, -- width=.11
+    {name=L['Auction Bid\n(per item)'], width=.4, align='RIGHT'},
+    {name=L['% Hist.\nValue'], width=.18, align='CENTER'}, -- -- width=.21
 }
 bid_listing:SetSelection(function(data)
 	return data.record == get_bid_selection() or data.record.historical_value and get_bid_selection() and get_bid_selection().historical_value
@@ -99,11 +100,11 @@ end)
 
 buyout_listing = listing.new(frame.buyout_listing)
 buyout_listing:SetColInfo{
-    {name=AUX_AUCTIONS_1, width=.16, align='CENTER'}, -- width=.17
-    {name=AUX_TIME_LEFT, width=.10, align='CENTER'}, -- width=.11
-    {name=AUX_STACK_SIZE, width=.16, align='CENTER'}, -- width=.11
-    {name=AUX_AUCTION_BUYOUT_ITEM, width=.4, align='RIGHT'},
-    {name=AUX_HIST_VALUE, width=.18, align='CENTER'}, -- -- width=.21
+    {name=L['AUX_AUCTIONS'], width=.16, align='CENTER'}, -- width=.17
+    {name=L['Time\nLeft'], width=.10, align='CENTER'}, -- width=.11
+    {name=L['Stack\nSize'], width=.16, align='CENTER'}, -- width=.11
+    {name=L['Auction Buyout\n(per item)'], width=.4, align='RIGHT'},
+    {name=L['% Hist.\nValue'], width=.18, align='CENTER'}, -- -- width=.21
 }
 buyout_listing:SetSelection(function(data)
 	return data.record == get_buyout_selection() or data.record.historical_value and get_buyout_selection() and get_buyout_selection().historical_value
@@ -132,7 +133,7 @@ end
 do
     local btn = gui.button(frame.parameters)
     btn:SetPoint('TOPLEFT', status_bar, 'TOPRIGHT', 5, 0)
-    btn:SetText(AUX_POST_BTN)
+    btn:SetText(L['AUX_POST_BTN'])
 		btn:SetWidth(btn:GetFontString():GetStringWidth() + 14)
     btn:SetScript('OnClick', post_auctions)
     post_button = btn
@@ -140,7 +141,7 @@ end
 do
     local btn = gui.button(frame.parameters)
     btn:SetPoint('TOPLEFT', post_button, 'TOPRIGHT', 5, 0)
-    btn:SetText(AUX_REFRESH)
+    btn:SetText(L['Refresh'])
 		btn:SetWidth(btn:GetFontString():GetStringWidth() + 14)
     btn:SetScript('OnClick', refresh_button_click)
     refresh_button = btn
@@ -184,7 +185,7 @@ do
     end)
     slider.editbox:SetNumeric(true)
     slider.editbox:SetMaxLetters(3)
-    slider.label:SetText(AUX_STACK_SIZE_2)
+    slider.label:SetText(L['Stack Size'])
     stack_size_slider = slider
 end
 do
@@ -207,7 +208,7 @@ do
         end
     end)
     slider.editbox:SetNumeric(true)
-    slider.label:SetText(AUX_STACK_COUNT)
+    slider.label:SetText(L['Stack Count'])
     stack_count_slider = slider
 end
 do
@@ -216,7 +217,7 @@ do
     dropdown:SetWidth(90)
     local label = gui.label(dropdown, gui.font_size.small)
     label:SetPoint('BOTTOMLEFT', dropdown, 'TOPLEFT', -2, -3)
-    label:SetText(AUX_DURATION)
+    label:SetText(L['Duration'])
     UIDropDownMenu_Initialize(dropdown, initialize_duration_dropdown)
     dropdown:SetScript('OnShow', function()
         UIDropDownMenu_Initialize(this, initialize_duration_dropdown)
@@ -234,7 +235,7 @@ do
     end)
     local label = gui.label(checkbox, gui.font_size.small)
     label:SetPoint('RIGHT', checkbox, 'LEFT', -6, 1) -- 'LEFT', checkbox, 'RIGHT', 4, 1
-    label:SetText(AUX_HIDE_THIS_ITEM)
+    label:SetText(L['Hide this item'])
     hide_checkbox = checkbox
 end
 do
@@ -261,7 +262,7 @@ do
     do
         local label = gui.label(editbox, gui.font_size.small)
         label:SetPoint('BOTTOMLEFT', editbox, 'TOPLEFT', -2, 1)
-        label:SetText(AUX_UNIT_STARTING_PRICE)
+        label:SetText(L['Unit Starting Price'])
     end
     do
         local label = gui.label(editbox, 14)
@@ -296,7 +297,7 @@ do
     do
         local label = gui.label(editbox, gui.font_size.small)
         label:SetPoint('BOTTOMLEFT', editbox, 'TOPLEFT', -2, 1)
-        label:SetText(AUX_UNIT_BUYOUT_PRICE)
+        label:SetText(L['Unit Buyout Price'])
     end
     do
         local label = gui.label(editbox, 14)
@@ -318,11 +319,11 @@ function aux.handle.LOAD()
 		frame.bid_listing:Hide()
 		frame.buyout_listing:SetPoint('BOTTOMLEFT', frame.inventory, 'BOTTOMRIGHT', 2.5, 0)
 		buyout_listing:SetColInfo{
-			{name=AUX_AUCTIONS_1, width=.15, align='CENTER'},
-			{name=AUX_TIME_LEFT, width=.15, align='CENTER'},
-			{name=AUX_STACK_SIZE, width=.15, align='CENTER'},
-			{name=AUX_AUCTION_BUYOUT_ITEM, width=.4, align='RIGHT'},
-			{name=AUX_HIST_VALUE, width=.15, align='CENTER'},
+			{name=L['AUX_AUCTIONS'], width=.15, align='CENTER'},
+			{name=L['Time\nLeft'], width=.15, align='CENTER'},
+			{name=L['Stack\nSize'], width=.15, align='CENTER'},
+			{name=L['Auction Buyout\n(per item)'], width=.4, align='RIGHT'},
+			{name=L['% Hist.\nValue'], width=.15, align='CENTER'},
 		}
 	end
 end
