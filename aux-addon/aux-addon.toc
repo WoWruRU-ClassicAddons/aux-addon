@@ -3,7 +3,7 @@
 ## Title: aux
 ## Notes: Auction House replacement
 ## Notes-ruRU: Замена аукционого дома
-## SavedVariables: aux, aux_scale, aux_post_bid, aux_ignore_owner, aux_crafting_cost, aux_items, aux_item_ids, aux_auctionable_items, aux_merchant_buy, aux_merchant_sell
+## SavedVariables: aux
 
 libs\package.lua
 libs\T.lua

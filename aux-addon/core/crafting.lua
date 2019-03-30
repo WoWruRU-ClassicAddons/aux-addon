@@ -9,7 +9,7 @@ local search_tab = require 'aux.tabs.search'
 local L = aux.L
 
 function aux.handle.LOAD()
-		if not aux_crafting_cost then
+		if not aux.account_data.crafting_cost then
 			return
 		end
 		aux.event_listener('ADDON_LOADED', function()
